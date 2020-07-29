@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+</head>
+
+<body>
+    <!-- <div id="ss">
+        <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, animi!</p>
+        <p id="p2" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, velit?</p>
+        <p id="p3" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, maxime.</p>
+    </div>
+
+    <script>
+        setInterval(function() {
+            $('#p1').delay(4000).fadeOut(1000);
+            $('#p2').delay(4000).fadeIn(1000);
+            $('#p2').delay(2000).fadeOut(1000);
+            $('#p1').delay(6000).fadeIn(1000);
+        }, 1000);
+        
+    </script> -->
+
+    <div class="cn">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-pause="none" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active" data-interval="4000">
+                    <img class="d-block img-fluid" src="ss/6.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item" data-interval="1750">
+                    <img class="d-block img-fluid" src="ss/1.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item" data-interval="1750">
+                    <img class="d-block img-fluid" src="ss/2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item" data-interval="1750">
+                    <img class="d-block img-fluid" src="ss/3.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item" data-interval="1750">
+                    <img class="d-block img-fluid" src="ss/5.jpg" alt="Second slide">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $.fn.carousel.Constructor.prototype.cycle = function(event) {
+
+            if (!event) {
+                this._isPaused = false;
+            }
+
+            if (this._interval) {
+                clearInterval(this._interval)
+                this._interval = null;
+            }
+
+            if (this._config.interval && !this._isPaused) {
+
+                var $ele = $('.carousel-item-next');
+                var newInterval = $ele.data('interval') || this._config.interval;
+                this._interval = setInterval(
+                    (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
+                    newInterval
+                );
+            }
+        };
+    </script>
+</body>
+
+</html>
